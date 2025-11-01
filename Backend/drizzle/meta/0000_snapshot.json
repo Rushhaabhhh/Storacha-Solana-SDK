@@ -1,5 +1,5 @@
 {
-  "id": "7e1101b1-a27d-4091-94fe-c2ee3537b535",
+  "id": "9d6385ca-ad6e-452d-a20d-84df2f503960",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -12,18 +12,7 @@
           "name": "id",
           "type": "integer",
           "primaryKey": true,
-          "notNull": true,
-          "identity": {
-            "type": "always",
-            "name": "config_id_seq",
-            "schema": "public",
-            "increment": "1",
-            "startWith": "1",
-            "minValue": "1",
-            "maxValue": "2147483647",
-            "cache": "1",
-            "cycle": false
-          }
+          "notNull": true
         },
         "admin_key": {
           "name": "admin_key",
@@ -99,7 +88,7 @@
         },
         "deposit_amount": {
           "name": "deposit_amount",
-          "type": "integer",
+          "type": "bigint",
           "primaryKey": false,
           "notNull": true
         },
@@ -114,6 +103,20 @@
           "type": "integer",
           "primaryKey": false,
           "notNull": true
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "'2025-01-01'"
+        },
+        "expires_at": {
+          "name": "expires_at",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "'2025-10-22'"
         }
       },
       "indexes": {},
